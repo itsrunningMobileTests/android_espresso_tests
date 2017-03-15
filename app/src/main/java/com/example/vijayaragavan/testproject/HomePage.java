@@ -22,6 +22,8 @@ public class HomePage extends AppCompatActivity implements OnClickListener {
 
     Button btnAdd;
     Button btnSub;
+    Button btnMul;
+    Button btnDiv;
 
 
     @Override
@@ -48,9 +50,16 @@ public class HomePage extends AppCompatActivity implements OnClickListener {
         etResult =(TextView) findViewById(R.id.tvResult);
 
         btnAdd = (Button) findViewById(R.id.btnAdd);
+        btnSub = (Button) findViewById(R.id.btnSub);
+        btnMul = (Button) findViewById(R.id.btnMul);
+        btnDiv = (Button) findViewById(R.id.btnDiv);
+
 
 
         btnAdd.setOnClickListener(this);
+        btnSub.setOnClickListener(this);
+        btnMul.setOnClickListener(this);
+        btnDiv.setOnClickListener(this);
 
 
     }
@@ -77,15 +86,22 @@ public class HomePage extends AppCompatActivity implements OnClickListener {
         // write operation into oper, we will use it later for output
         switch (v.getId()) {
             case R.id.btnAdd:
-
                 result = num1 + num2;
+                break;
+            case R.id.btnSub:
+                result = num1 - num2;
+                break;
+            case R.id.btnMul:
+                result = num1 * num2;
+                break;
+            case R.id.btnDiv:
+                result = num1 / num2;
                 break;
             default:
                 break;
         }
 
-
-//        etResult.setText( "vijay");
+        //  etResult.setText( "vijay");
         // form the output line
         etResult.setText( Float.toString(result));
 
