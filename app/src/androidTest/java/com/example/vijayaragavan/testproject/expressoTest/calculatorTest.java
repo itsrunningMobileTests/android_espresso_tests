@@ -3,7 +3,9 @@ package com.example.vijayaragavan.testproject.expressoTest;
 import android.support.test.rule.ActivityTestRule;
 
 import com.example.vijayaragavan.testproject.HomePage;
+import com.example.vijayaragavan.testproject.LoginActivity;
 import com.example.vijayaragavan.testproject.R;
+import com.squareup.spoon.Spoon;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -30,11 +32,13 @@ public class calculatorTest extends loginTest {
     private float dexpected;
     private String operator;
 
+
     @Before
     public void variableInit(){
         num1 = (float) 32;
         num2 = (float) 45.09;
         setText(num1,num2);
+
     }
 
     @Test
