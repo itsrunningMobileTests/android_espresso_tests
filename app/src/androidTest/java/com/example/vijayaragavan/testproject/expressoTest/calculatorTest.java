@@ -2,15 +2,12 @@ package com.example.vijayaragavan.testproject.expressoTest;
 
 import android.support.test.rule.ActivityTestRule;
 
-import com.example.vijayaragavan.testproject.HomePage;
-import com.example.vijayaragavan.testproject.LoginActivity;
+import com.example.vijayaragavan.testproject.HomePageActivity;
 import com.example.vijayaragavan.testproject.R;
-import com.squareup.spoon.Spoon;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.clearText;
@@ -20,12 +17,17 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
+import com.example.vijayaragavan.testproject.expressoTest.Page.ScreenshotActivityTestRule;
+import com.example.vijayaragavan.testproject.expressoTest.Page.SpoonScreenshotAction;
+
 /**
  * Created by sripadmasudha on 14/03/17.
  */
 
 public class calculatorTest extends loginTest {
 
+//    @Rule
+//    public final ActivityTestRule main = new ScreenshotActivityTestRule<>(HomePageActivity.class, true, false);
 
     private float num1;
     private float num2;
@@ -33,10 +35,12 @@ public class calculatorTest extends loginTest {
     private String operator;
 
 
+
     @Before
     public void variableInit(){
         num1 = (float) 32;
         num2 = (float) 45.09;
+        //main.launchActivity(null);
         setText(num1,num2);
 
     }
@@ -46,6 +50,7 @@ public class calculatorTest extends loginTest {
     {
         onView(withId(R.id.btnAdd)).perform(click());
         onView(withId(R.id.tvResult)).check(matches(withText(String.valueOf(num1+num2))));
+
     }
 
     @Test
@@ -55,8 +60,10 @@ public class calculatorTest extends loginTest {
         num2 = (float) 10.05;
         setText(num1,num2);
 
+//        SpoonScreenshotAction.perform("start1");
         onView(withId(R.id.btnSub)).perform(click());
         onView(withId(R.id.tvResult)).check(matches(withText(String.valueOf(num1-num2))));
+//        SpoonScreenshotAction.perform("Taking Screen shots");
     }
 
     @Test
@@ -66,9 +73,10 @@ public class calculatorTest extends loginTest {
         num2 = (float) 10.05;
         setText(num1,num2);
         dexpected =num1*num2;
-        onView(withId(R.id.btnMul)).perform(click());
 
+        onView(withId(R.id.btnMul)).perform(click());
         onView(withId(R.id.tvResult)).check(matches(withText(String.valueOf(num1*num2))));
+
     }
 
 

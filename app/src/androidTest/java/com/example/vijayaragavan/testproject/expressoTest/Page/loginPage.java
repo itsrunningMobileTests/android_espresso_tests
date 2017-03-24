@@ -24,8 +24,6 @@ public class loginPage {
     private static String password;
     private LoginActivity mActivity;
 
-//    @Rule
-//    public ActivityTestRule<LoginActivity> mActivityRule = new ActivityTestRule(LoginActivity.class);
 
 
     private static void login(){
@@ -33,13 +31,11 @@ public class loginPage {
         username = "abc@gmail.com";
         password = "qwerty12345";
 
-//        mActivity = mActivityRule.getActivity();
         onView(withId(R.id.email)).perform(typeText(username));
         onView(withId(R.id.password)).perform(typeText(password));
         onView(withId(R.id.email_sign_in_button)).perform(click());
 
         onView(withId(R.id.tvResult)).check(matches(withText("Result")));
 
-//        Spoon.screenshot(mActivity, "initial_state");
     }
 }

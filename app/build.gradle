@@ -4,7 +4,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.stanfy.spoon:spoon-gradle-plugin:1.0.4'
+        classpath 'com.stanfy.spoon:spoon-gradle-plugin:1.2.2'
     }
 }
 
@@ -31,6 +31,7 @@ android {
     buildTypes {
         debug {
             testCoverageEnabled false
+            debuggable true
         }
 
         release {
@@ -63,4 +64,12 @@ dependencies {
 spoon {
     debug = true;
     adbTimeout = 30;
+    baseOutputDir = file("$buildDir/spoon-log")
+
+    // To execute the tests device by device */
+    sequential = false
+
+    // To grant permissions to Android M >= devices */
+    grantAllPermissions = true
+
 }

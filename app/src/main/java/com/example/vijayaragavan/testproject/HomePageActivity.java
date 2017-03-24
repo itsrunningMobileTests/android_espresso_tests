@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class HomePage extends AppCompatActivity implements OnClickListener {
+public class HomePageActivity extends AppCompatActivity implements OnClickListener {
 
 
     EditText etNum1;

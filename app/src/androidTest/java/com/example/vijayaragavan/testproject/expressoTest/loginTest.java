@@ -35,7 +35,7 @@ public class loginTest {
 
     private String username;
     private String password;
-    private LoginActivity mActivity;
+    public LoginActivity mActivity;
 
     @Rule
     public ActivityTestRule<LoginActivity> main = new ActivityTestRule(LoginActivity.class);

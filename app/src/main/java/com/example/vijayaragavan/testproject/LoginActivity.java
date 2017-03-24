@@ -338,7 +338,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             if (success) {
 //                finish();
 
-                Intent intent = new Intent(getApplicationContext(), HomePage.class);
+                Intent intent = new Intent(getApplicationContext(), HomePageActivity.class);
                 //EditText editText = (EditText) findViewById(R.id.editText);
 //                String message = editText.getText().toString();
 //                intent.putExtra(EXTRA_MESSAGE, message);
